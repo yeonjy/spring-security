@@ -12,7 +12,8 @@ spring:
           kakao:
             client-id: ${rest api 키 값}
             client-secret: ${client secret 값}
-            client-authentication-method: http://localhost:8080/oauth2/code/kakao
+            redirect-uri: http://localhost:8080/oauth2/code/kakao
+            client-authentication-method: POST
             authorization-grant-type: authorization_code
             client-name: kakao
             scope:
