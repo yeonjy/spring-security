@@ -1,4 +1,15 @@
 spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:tcp://localhost/~/security
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
   security:
     oauth2:
       client:
@@ -13,7 +24,7 @@ spring:
             client-id: ${rest api 키 값}
             client-secret: ${client secret 값}
             redirect-uri: http://localhost:8080/oauth2/code/kakao
-            client-authentication-method: POST
+            client-authentication-method: client_secret_post
             authorization-grant-type: authorization_code
             client-name: kakao
             scope:
